@@ -8,12 +8,4 @@ import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 import App from './src/App';
 
-export default class DemoRedux02 extends Component {
-  render() {
-    return (
-      <App />
-    );
-  }
-}
-
-AppRegistry.registerComponent('DemoRedux02', () => DemoRedux02);
+AppRegistry.registerComponent('DemoRedux02', () => App);

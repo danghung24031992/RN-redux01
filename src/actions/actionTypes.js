@@ -1,2 +1,2 @@
-export default ACTION_INCREASE = 'UP';
-export default ACTION_DECREASE = 'DOWN';
+export const ACTION_INCREASE = 'INCREASE';
+export const ACTION_DECREASE = 'DECREASE';

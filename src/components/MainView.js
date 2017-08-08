@@ -13,19 +13,21 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux';
-
+import * as types from '../actions/actionTypes';
 class MainView extends Component {
     render() {
+        console.log(this.props);
+        const { myValue , increment , subNumber } = this.props;
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>{this.props.myValue}</Text>
+                <Text>{myValue}</Text>
                 <TouchableOpacity onPress={() => {
-                            this.props.dispatch({ type: 'UP' });
+                            this.props.dispatch({ type: types.ACTION_INCREASE });
                         }} style={styles.button}>
                     <Text>up</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {
-                            this.props.dispatch({ type: 'DOWN' });
+                            this.props.dispatch({ type: types.ACTION_DECREASE });
                         }} style={styles.button}>
                     <Text>down</Text>
                 </TouchableOpacity>
@@ -60,5 +62,12 @@ const styles = StyleSheet.create({
 function mapStateToProps(state) {
     return { myValue: state.value };
 }
+
+// function mapDispatchToProps(dispatch){
+//     return {
+//       increment: dispatch( counterActions.increment() ),
+//       decrement:dispatch( counterActions.subNumber() )
+//     }
+// }
 
 export default connect(mapStateToProps)(MainView);

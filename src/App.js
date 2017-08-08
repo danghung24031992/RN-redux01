@@ -11,14 +11,7 @@ import { connect } from 'react-redux';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import MainView from './components/MainView';
-
-const initState = { value: 0 };
-
-const reducer = (state = initState, action) => {
-    if (action.type === 'UP') return { value: state.value + 1 };
-    if (action.type === 'DOWN') return { value: state.value - 1 };
-    return state;
-}
+import reducer from './reducers/reducer'
 
 const store = createStore(reducer);
 
